@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f5">
+  <meta name="description" content="A little world made for two.">
+  <title>Little Us 💗</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <header class="topbar">
+      <h1>little us <span>♡</span></h1>
+      <p>our little world, just for two.</p>
+    </header>
+
+    <main>
+
+      <!-- LOGIN -->
+      <section id="loginScreen" class="screen">
+        <div class="welcome">
+          <div class="plant-icon">🌱</div>
+          <h2>a little world for two</h2>
+          <p>somewhere our love can grow.</p>
+        </div>
+
+        <div class="panel">
+          <h3>Welcome home ♡</h3>
+          <input id="email" type="email" placeholder="Your email">
+          <input id="password" type="password" placeholder="Password">
+          <button id="loginBtn">Log in</button>
+          <button id="signupBtn" class="secondary">Create account</button>
+        </div>
+
+        <div class="panel">
+          <h3>Find your person 💌</h3>
+          <input id="inviteCode" placeholder="Enter partner invite code">
+          <button id="joinBtn">Join our little world</button>
+        </div>
+      </section>
+
+      <!-- GARDEN -->
+      <section id="gardenScreen" class="screen hidden">
+        <div class="welcome">
+          <p>your little universe</p>
+          <h2 id="coupleName">our garden ♡</h2>
+        </div>
+
+        <div class="garden">
+          <div id="homeDesign">🏡</div>
+          <div id="treeDesign">🌳</div>
+          <p id="treeMessage">our love is growing...</p>
+          <p><span id="growthDays">0</span> / 30 days together</p>
+        </div>
+
+        <div class="panel">
+          <h3>today's little question</h3>
+          <p id="dailyQuestion">Your question is waiting...</p>
+          <button data-screen="questionScreen">Answer today's question</button>
+        </div>
+
+        <div class="panel">
+          <h3>your garden rewards 🪴</h3>
+          <p id="coinCount">0 love coins</p>
+          <button data-screen="rewardsScreen">Decorate our garden</button>
+        </div>
+      </section>
+
+      <!-- DAILY QUESTIONS -->
+      <section id="questionScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>little questions ♡</h2>
+        <p id="questionNumber">day 1 of 30</p>
+        <div class="panel">
+          <p id="questionText">What's one little thing that makes you feel loved?</p>
+          <textarea id="answerText" placeholder="Tell your person..."></textarea>
+          <button id="submitAnswerBtn">Send my answer 💗</button>
+          <p id="partnerProgress"></p>
+        </div>
+      </section>
+
+      <!-- REWARDS -->
+      <section id="rewardsScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>our little shop 🪴</h2>
+        <p>Use your love coins to decorate your world.</p>
+        <div id="rewardShop"></div>
+      </section>
+
+      <!-- THE PLANT KNOWS -->
+      <section id="plantScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <div class="plant-icon">🌷</div>
+        <h2>the plant knows</h2>
+        <p>tell me about your little world.</p>
+
+        <div class="panel">
+          <h3>how are you feeling today?</h3>
+          <select id="mood">
+            <option>Happy</option>
+            <option>Okay</option>
+            <option>Tired</option>
+            <option>A little sad</option>
+            <option>Anxious</option>
+            <option>Need a hug</option>
+          </select>
+
+          <textarea id="moodNote"
+            placeholder="Anything you want to tell me? (private)"></textarea>
+
+          <label>
+            <input type="checkbox" id="shareMood">
+            Let my person know how I'm feeling
+          </label>
+          <button id="saveMoodBtn">Save my check-in</button>
+        </div>
+
+        <div class="panel">
+          <h3>things that make me happy ♡</h3>
+          <input id="favouriteFlower" placeholder="Favourite flowers">
+          <input id="favouriteChocolate" placeholder="Favourite chocolates">
+          <input id="favouriteToy" placeholder="Favourite toys or plushies">
+          <input id="favouriteSnack" placeholder="Favourite snacks">
+          <input id="favouriteGift" placeholder="Other little things I love">
+          <button id="savePreferencesBtn">Save my favourites</button>
+        </div>
+
+        <div class="panel">
+          <h3>little surprises for your person 🎁</h3>
+          <div id="surpriseSuggestions"></div>
+        </div>
+
+        <div class="panel">
+          <h3>love notes from your person 💌</h3>
+          <div id="loveInbox"></div>
+        </div>
+      </section>
+
+      <!-- LOVE GIFTS -->
+      <section id="giftScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>make a little gift 💌</h2>
+        <p>something made with love.</p>
+
+        <div class="panel">
+          <input id="giftTitle" placeholder="Give your gift a title">
+          <textarea id="giftLetter" placeholder="Write a letter..."></textarea>
+          <label>Add pictures of you together</label>
+          <input id="giftPhotos" type="file" accept="image/*" multiple>
+          <label>Choose a little decoration</label>
+          <select id="giftSticker">
+            <option>💗 Hearts</option>
+            <option>🎀 Bows</option>
+            <option>🌷 Flowers</option>
+            <option>🧸 Teddy bears</option>
+            <option>⭐ Stars</option>
+            <option>🦋 Butterflies</option>
+          </select>
+          <button id="createGiftBtn">Create my gift ♡</button>
+        </div>
+
+        <div class="panel">
+          <h3>gifts made for you</h3>
+          <div id="receivedGifts"></div>
+        </div>
+      </section>
+
+      <!-- SONG DEDICATION -->
+      <section id="songScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>a song for my person 🎧</h2>
+        <div class="panel">
+          <input id="songName" placeholder="Song name">
+          <input id="songArtist" placeholder="Artist">
+          <input id="songLink" type="url" placeholder="Spotify or music link">
+          <textarea id="songLetter" placeholder="Why does this song remind you of them?"></textarea>
+          <button id="sendSongBtn">Dedicate this song 💗</button>
+        </div>
+        <div id="songGifts"></div>
+      </section>
+
+      <!-- SPOTIFY PLAYLIST GIFTS -->
+      <section id="playlistScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>our little soundtrack 🎀</h2>
+        <div class="panel">
+          <input id="playlistTitle" placeholder="Playlist name">
+          <input id="playlistLink" type="url" placeholder="Paste Spotify playlist link">
+          <input id="playlistCover" type="file" accept="image/*">
+          <textarea id="playlistMessage" placeholder="A little dedication..."></textarea>
+          <button id="sendPlaylistBtn">Send playlist gift</button>
+        </div>
+        <div id="playlistGifts"></div>
+      </section>
+
+      <!-- LOVE CERTIFICATE -->
+      <section id="certificateScreen" class="screen hidden">
+        <button class="backBtn" data-screen="gardenScreen">← Back</button>
+        <h2>our little love certificate ♡</h2>
+        <div id="loveCertificate" class="panel">
+          <p>30 days of growing together.</p>
+          <div>🌳</div>
+          <h3>our little forever</h3>
+          <p id="certificateEvidence"></p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- NAVIGATION -->
+    <nav id="bottomNav" class="bottom-nav hidden">
+      <button data-screen="gardenScreen">🏡<span>Home</span></button>
+      <button data-screen="plantScreen">🌱<span>Plant</span></button>
+      <button data-screen="giftScreen">💌<span>Gifts</span></button>
+      <button data-screen="songScreen">🎧<span>Songs</span></button>
+      <button data-screen="playlistScreen">🎀<span>Playlist</span></button>
+    </nav>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
