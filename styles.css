@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+  --pink: #e9a9b7;
+  --light-pink: #fff0f3;
+  --cream: #fffaf4;
+  --brown: #765b55;
+  --green: #9aaf91;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: 'DM Sans', sans-serif;
+}
+
+#app {
+  max-width: 650px;
+  min-height: 100vh;
+  margin: auto;
+  padding-bottom: 90px;
+}
+
+.topbar {
+  text-align: center;
+  padding: 28px 15px 18px;
+  background: var(--light-pink);
+  border-radius: 0 0 30px 30px;
+}
+
+.topbar h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin: 0;
+  color: #b9788b;
+}
+
+.topbar h1 span {
+  color: #e6a0b2;
+}
+
+.topbar p {
+  margin: 5px 0 0;
+  font-size: 13px;
+}
+
+main {
+  padding: 20px 16px;
+}
+
+.screen {
+  animation: appear .35s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #a96f80;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.welcome {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.plant-icon {
+  font-size: 65px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+.panel {
+  background: var(--white);
+  border: 1px solid #f4e2df;
+  border-radius: 22px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 5px 20px #d9b9b51c;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #ead8d5;
+  border-radius: 13px;
+  background: #fffaf9;
+  color: var(--brown);
+  font: inherit;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 20px;
+  margin: 6px 3px;
+  background: var(--pink);
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+button.secondary {
+  background: #f8e7e9;
+  color: #a96f80;
+}
+
+.backBtn {
+  background: transparent;
+  color: var(--brown);
+  padding-left: 0;
+}
+
+.garden {
+  text-align: center;
+  padding: 30px 15px;
+  border-radius: 25px;
+  background: linear-gradient(#e7f1e4, #fff1e8);
+  min-height: 280px;
+}
+
+#homeDesign {
+  font-size: 48px;
+}
+
+#treeDesign {
+  font-size: 105px;
+  margin: 15px;
+  animation: float 4s ease-in-out infinite;
+}
+
+#treeMessage {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 4px;
+  background: #fffaf4f5;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #f0dfdc;
+  z-index: 10;
+}
+
+.bottom-nav button {
+  background: transparent;
+  color: #a96f80;
+  font-size: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-nav span {
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+#rewardShop, #loveInbox, #receivedGifts,
+#songGifts, #playlistGifts,
+#surpriseSuggestions {
+  display: grid;
+  gap: 12px;
+}
+
+#loveCertificate {
+  text-align: center;
+  background: #fff1f3;
+  border: 2px dashed #e5a7b5;
+}
+
+#loveCertificate div {
+  font-size: 75px;
+}
+
+label {
+  display: block;
+  margin: 12px 0;
+}
+
+@media (min-width: 600px) {
+  main {
+    padding: 30px;
+  }
+}
